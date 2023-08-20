@@ -1,7 +1,7 @@
 package com.example.employee_demo.controller;
 
 import com.example.employee_demo.models.Employee;
-import com.example.employee_demo.controller.service.EmployeeService;
+import com.example.employee_demo.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;

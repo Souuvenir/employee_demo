@@ -1,4 +1,4 @@
-package com.example.employee_demo.controller.service;
+package com.example.employee_demo.service;
 
 import com.example.employee_demo.models.Employee;
 import com.example.employee_demo.repository.EmployeeRepository;
