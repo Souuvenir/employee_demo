@@ -20,4 +20,8 @@ public class EmployeeService {
         all = employeeRepository.findAll();
         return all;
     }
+
+    public void deleteById(Integer id){
+        employeeRepository.deleteById(id);
+    }
 }

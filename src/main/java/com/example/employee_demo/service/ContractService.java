@@ -20,4 +20,8 @@ public class ContractService {
         all = contractRepository.findAll();
         return all;
     }
+
+    public void deleteById(Integer id){
+        contractRepository.deleteById(id);
+    }
 }
