@@ -3,6 +3,7 @@ package com.example.employee_demo.controller;
 import com.example.employee_demo.models.ContractType;
 import com.example.employee_demo.service.ContractTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,5 +22,11 @@ public class ContractTypeController {
     @GetMapping(path="/all")
     public @ResponseBody Iterable<ContractType> getContractType() {
         return contractTypeService.findAll();
+    }
+
+    @DeleteMapping(path="/delete")
+    public ResponseEntity<Void> deleteArea(@RequestBody ContractType contracttype) {
+        contractTypeService.deleteById(contracttype.getId());
+        return ResponseEntity.ok().build();
     }
 }
