@@ -3,6 +3,7 @@ package com.example.employee_demo.controller;
 import com.example.employee_demo.models.Area;
 import com.example.employee_demo.service.AreaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,4 +23,11 @@ public class AreaController {
     public @ResponseBody Iterable<Area> getArea() {
         return areaService.findAll();
     }
+
+    @DeleteMapping(path="/delete")
+    public ResponseEntity<Void> deleteArea(@RequestBody Area area) {
+        areaService.deleteById(area.getId());
+        return ResponseEntity.ok().build();
+    }
+
 }

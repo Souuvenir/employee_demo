@@ -20,4 +20,8 @@ public class AreaService {
         all = areaRepository.findAll();
         return all;
     }
+
+    public void deleteById(Integer id){
+        areaRepository.deleteById(id);
+    }
 }
