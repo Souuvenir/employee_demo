@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,9 +13,7 @@ import lombok.Setter;
 import java.io.Serializable;
 
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
+@Data
 public class ContractType implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
