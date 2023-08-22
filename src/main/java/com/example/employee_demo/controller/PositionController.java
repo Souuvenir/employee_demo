@@ -26,9 +26,9 @@ public class PositionController {
         return positionService.findAll();
     }
 
-    @DeleteMapping(path="/delete")
-    public ResponseEntity<Void> deletePosition(@RequestBody Position position) {
-        positionService.deleteById(position.getId());
+    @DeleteMapping(path="/delete/{id}")
+    public ResponseEntity<Void> deletePosition(@PathVariable Integer id) {
+        positionService.deleteById(id);
         return ResponseEntity.ok().build();
     }
 }

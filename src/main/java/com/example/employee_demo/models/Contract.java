@@ -21,6 +21,6 @@ public class Contract {
     private Date startDate;
     @JsonFormat(pattern = "yyyy-MM-dd")
     private Date finishDate;
-    private Integer employee_id;
+    private Integer employeeId;
 
 }

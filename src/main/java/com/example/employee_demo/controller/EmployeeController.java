@@ -26,9 +26,9 @@ public class EmployeeController {
         return employeeService.findAll();
     }
 
-    @DeleteMapping(path="/delete")
-    public ResponseEntity<Void> deleteArea(@RequestBody Employee employee) {
-        employeeService.deleteById(employee.getId());
+    @DeleteMapping(path="/delete/{id}")
+    public ResponseEntity<Void> deleteArea(@PathVariable Integer id) {
+        employeeService.deleteById(id);
         return ResponseEntity.ok().build();
     }
 }

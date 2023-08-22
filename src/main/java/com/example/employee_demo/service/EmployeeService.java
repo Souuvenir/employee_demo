@@ -2,6 +2,7 @@ package com.example.employee_demo.service;
 
 import com.example.employee_demo.models.Employee;
 import com.example.employee_demo.repository.EmployeeRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +10,8 @@ import org.springframework.stereotype.Service;
 public class EmployeeService {
     @Autowired
     private EmployeeRepository employeeRepository;
+    @Autowired
+    private ContractService contractService;
 
     public Employee save(Employee employee){
         employeeRepository.save(employee);
@@ -21,7 +24,9 @@ public class EmployeeService {
         return all;
     }
 
+    @Transactional
     public void deleteById(Integer id){
+        contractService.deleteByEmployeeId(id);
         employeeRepository.deleteById(id);
     }
 }

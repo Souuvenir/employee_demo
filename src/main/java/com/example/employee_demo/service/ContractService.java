@@ -24,4 +24,8 @@ public class ContractService {
     public void deleteById(Integer id){
         contractRepository.deleteById(id);
     }
+
+    public void deleteByEmployeeId(Integer id) {
+        contractRepository.deleteByEmployeeId(id);
+    }
 }

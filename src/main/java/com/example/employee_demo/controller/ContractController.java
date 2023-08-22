@@ -25,9 +25,9 @@ public class ContractController {
         return contractService.findAll();
     }
 
-    @DeleteMapping(path="/delete")
-    public ResponseEntity<Void> deleteArea(@RequestBody Contract contract) {
-        contractService.deleteById(contract.getId());
+    @DeleteMapping(path="/delete/{id}")
+    public ResponseEntity<Void> deleteArea(@PathVariable Integer id) {
+        contractService.deleteById(id);
         return ResponseEntity.ok().build();
     }
 }

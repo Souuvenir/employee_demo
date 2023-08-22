@@ -24,9 +24,9 @@ public class AreaController {
         return areaService.findAll();
     }
 
-    @DeleteMapping(path="/delete")
-    public ResponseEntity<Void> deleteArea(@RequestBody Area area) {
-        areaService.deleteById(area.getId());
+    @DeleteMapping(path="/delete/{id}")
+    public ResponseEntity<Void> deleteArea(@PathVariable Integer id) {
+        areaService.deleteById(id);
         return ResponseEntity.ok().build();
     }
 
