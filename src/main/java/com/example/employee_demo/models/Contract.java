@@ -22,5 +22,5 @@ public class Contract {
     @JsonFormat(pattern = "yyyy-MM-dd")
     private Date finishDate;
     private Integer employeeId;
-
+    private Integer contractTypeId;
 }

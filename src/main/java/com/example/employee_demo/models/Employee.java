@@ -18,6 +18,4 @@ public class Employee {
     private String gender;
     private Integer positionId;
     private Integer areaId;
-
-
 }
