@@ -2,6 +2,7 @@ package com.example.employee_demo.controller;
 
 import com.example.employee_demo.models.Area;
 import com.example.employee_demo.service.AreaService;
+import com.example.employee_demo.service.ContractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,10 @@ public class AreaController {
     @Autowired
     AreaService areaService;
 
+    public AreaController(AreaService areaService) {
+
+        this.areaService = areaService;
+    }
     @PostMapping(path="/add")
     public @ResponseBody Area addNewArea (@RequestBody Area area) {
 

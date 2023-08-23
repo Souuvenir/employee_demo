@@ -12,7 +12,12 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(path="/position")
 public class PositionController {
     @Autowired
-    PositionService positionService;
+    private final PositionService positionService;
+
+    public PositionController(PositionService positionService) {
+
+        this.positionService = positionService;
+    }
 
     @PostMapping(path="/add")
     public @ResponseBody Position addNewPosition (@RequestBody Position position) {

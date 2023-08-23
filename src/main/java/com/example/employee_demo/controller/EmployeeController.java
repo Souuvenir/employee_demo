@@ -17,6 +17,11 @@ public class EmployeeController {
     @Autowired
     EmployeeService employeeService;
 
+    public EmployeeController(EmployeeService employeeService) {
+
+        this.employeeService = employeeService;
+    }
+
     @PostMapping(path="/add")
     public @ResponseBody Employee addNewUser (@RequestBody Employee employee) {
 
@@ -42,7 +47,7 @@ public class EmployeeController {
     }
 
     @DeleteMapping(path="/delete/{id}")
-    public ResponseEntity<Void> deleteArea(@PathVariable Integer id) {
+    public ResponseEntity<Void> deleteEmployee(@PathVariable Integer id) {
         employeeService.deleteById(id);
         return ResponseEntity.ok().build();
     }

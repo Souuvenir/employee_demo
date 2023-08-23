@@ -14,6 +14,11 @@ public class ContractController {
     @Autowired
     ContractService contractService;
 
+    public ContractController(ContractService contractService) {
+
+        this.contractService = contractService;
+    }
+
     @PostMapping(path="/add")
     public @ResponseBody Contract addNewContract (@RequestBody Contract contract) {
 
@@ -26,7 +31,7 @@ public class ContractController {
     }
 
     @DeleteMapping(path="/delete/{id}")
-    public ResponseEntity<Void> deleteArea(@PathVariable Integer id) {
+    public ResponseEntity<Void> deleteContract(@PathVariable Integer id) {
         contractService.deleteById(id);
         return ResponseEntity.ok().build();
     }
