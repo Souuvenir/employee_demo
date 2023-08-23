@@ -10,6 +10,10 @@ public class PositionService {
     @Autowired
     private PositionRepository positionRepository;
 
+    public PositionService(PositionRepository positionRepository) {
+        this.positionRepository = positionRepository;
+    }
+
     public Position save(Position position){
         positionRepository.save(position);
         return position;

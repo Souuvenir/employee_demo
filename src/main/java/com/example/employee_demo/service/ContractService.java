@@ -10,6 +10,10 @@ public class ContractService {
     @Autowired
     private ContractRepository contractRepository;
 
+    public ContractService(ContractRepository contractRepository) {
+        this.contractRepository = contractRepository;
+    }
+
     public Contract save(Contract contract){
         contractRepository.save(contract);
         return contract;

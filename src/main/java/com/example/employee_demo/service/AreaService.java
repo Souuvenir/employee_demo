@@ -10,6 +10,10 @@ public class AreaService {
     @Autowired
     private AreaRepository areaRepository;
 
+    public AreaService(AreaRepository areaRepository) {
+        this.areaRepository = areaRepository;
+    }
+
     public Area save(Area area){
         areaRepository.save(area);
         return area;
