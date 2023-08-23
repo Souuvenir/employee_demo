@@ -10,6 +10,8 @@ public class ContractTypeService {
     @Autowired
     private ContractTypeRepository contractTypeRepository;
 
+
+
     public ContractType save(ContractType contractType){
         contractTypeRepository.save(contractType);
         return contractType;
